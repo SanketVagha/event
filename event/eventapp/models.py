@@ -22,4 +22,4 @@ class Event(models.Model):
     longitude = models.FloatField()
 
     def __str__(self):
-        return str(self.id)
+        return self.id
