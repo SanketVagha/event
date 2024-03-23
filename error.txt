@@ -1,0 +1,47 @@
+django.template.library.InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'rest_framework.templatetags.rest_framework': cannot import name 'SkipError' from 'rest_framework.exceptions' (C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\exceptions.py)
+
+
+solution : 
+
+
+python -m pip uninstall numpy
+python -m pip uninstall Flask
+python -m pip install --upgrade numpy
+python -m pip install --upgrade Flask
+
+pipdeptree
+
+
+create environment file
+
+python -m venv .env  <.env> is environment file
+.\.env\Scripts\activate
+python -m pip install django
+python -m pip install djangorestframework
+py manage.py runserver
+
+
+
+
+
+if till not working
+
+python -m pip install django-cors-headers
+
+
+setting.py
+
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    ...
+]
+
+TEMPLATES = [
+    {
+        ...
+        'OPTIONS': {
+            'builtins': ['rest_framework.templatetags.rest_framework'],
+        },
+    },
+]
